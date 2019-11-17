@@ -3,6 +3,10 @@ Simple Pseudo Assembler Interpterer created using ANTLR4 library.
 
 The program simulates an assembler with a stack and 4 registers: eax, ebx, ecx and edx
 
+Program can be installed using Maven
+
+The program can operate both in console mode (single command entry) and in standard input stream redirection (e.g. from a file).
+
 Available commands are: mov , xor , push and int 0x80
 
 mov - move result of mathematical expression or register value to register
