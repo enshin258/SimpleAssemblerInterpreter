@@ -14,11 +14,12 @@ public class Main {
         String command;
         AssemblerGrammarHelper assemblerGrammarHelper = new AssemblerGrammarHelper();
         MyVisitor visitor = new MyVisitor(assemblerGrammarHelper);
+        int line_of_command = 0;
 
         while(scanner.hasNext())
         {
             command = scanner.nextLine();
-            command +="\n";
+            line_of_command++;
 
             CharStream charStream = CharStreams.fromString(command);
             AssemblerGrammarLexer lexer = new AssemblerGrammarLexer(charStream);
@@ -30,7 +31,7 @@ public class Main {
             visitor.visit(parseTree);
 
             if(parser.getNumberOfSyntaxErrors() > 0){
-                System.out.println("Error");
+                System.out.println(line_of_command + " Error");
                 assemblerGrammarHelper.cleanUp();
                 //assemblerGrammarHelper.getActualStatus();
                 continue;
@@ -43,7 +44,7 @@ public class Main {
                 assemblerGrammarHelper.cleanUp();
             }
             catch (UnsupportedOperationException e){
-                System.out.println("Error");
+                System.out.println(line_of_command + " Error");
                 assemblerGrammarHelper.cleanUp();
                 //assemblerGrammarHelper.getActualStatus();
             }
