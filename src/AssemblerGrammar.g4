@@ -1,10 +1,10 @@
 grammar AssemblerGrammar;
 
-instruction: ('mov' ' ' mov_expression | 'push' ' ' push_expression | int0x80_expression | 'xor' ' ' xor_expression) ' '* ('\n'|EOF);
+instruction: ('mov' ' ' mov_expression | 'push' ' ' push_expression | int0x80_expression | 'xor' ' ' xor_expression) (' ' | '\t')* ('\n'|EOF);
 
 mov_expression: math_operation ' '? ',' ' '? target_register;
 push_expression: math_operation;
-int0x80_expression:' '? 'int' ' '? '0x80';
+int0x80_expression:'int 0x80';
 xor_expression: math_operation ' '? ',' ' '? target_register;
 
 
@@ -29,4 +29,7 @@ PLUSORMINUSSYMBOL: ('+'|'-');
 MULTIPLICATIONSYMBOL: '*';
 LEFTBRACKET: '(';
 RIGHTBRACKET: ')';
+
+ErrorCharacter : . ;
+
 

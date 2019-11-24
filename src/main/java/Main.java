@@ -1,10 +1,6 @@
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.ConsoleErrorListener;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -14,12 +10,10 @@ public class Main {
         String command;
         AssemblerGrammarHelper assemblerGrammarHelper = new AssemblerGrammarHelper();
         MyVisitor visitor = new MyVisitor(assemblerGrammarHelper);
-        int line_of_command = 0;
 
         while(scanner.hasNext())
         {
             command = scanner.nextLine();
-            line_of_command++;
 
             CharStream charStream = CharStreams.fromString(command);
             AssemblerGrammarLexer lexer = new AssemblerGrammarLexer(charStream);
@@ -30,8 +24,10 @@ public class Main {
             ParseTree parseTree = parser.instruction();
             visitor.visit(parseTree);
 
+            //funkcja .getActualStatus() sluzy do wyswietlania zawartosci assemblera w celach pomocniczych
+
             if(parser.getNumberOfSyntaxErrors() > 0){
-                System.out.println(line_of_command + " Error");
+                System.out.println("Error");
                 assemblerGrammarHelper.cleanUp();
                 //assemblerGrammarHelper.getActualStatus();
                 continue;
@@ -43,8 +39,8 @@ public class Main {
                 //assemblerGrammarHelper.getActualStatus();
                 assemblerGrammarHelper.cleanUp();
             }
-            catch (UnsupportedOperationException e){
-                System.out.println(line_of_command + " Error");
+            catch (UnsupportedOperationException | RecognitionException e){
+                System.out.println("Error");
                 assemblerGrammarHelper.cleanUp();
                 //assemblerGrammarHelper.getActualStatus();
             }

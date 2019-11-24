@@ -1,3 +1,5 @@
+import org.antlr.v4.runtime.ParserRuleContext;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -30,7 +32,6 @@ class AssemblerGrammarHelper {
         this.mathOperationElementsList.clear();
         this.dataStringBasedOnInput="";
     }
-
     private String prepareStringFromContextText(String sourceString)
     {
         String changedString = sourceString;
@@ -39,8 +40,6 @@ class AssemblerGrammarHelper {
         changedString = changedString.replaceAll("%","");
         return changedString;
     }
-
-
     void addRegisterValueToList(AssemblerGrammarParser.Source_registerContext ctx)
     {
         String registerTextRepresentation = prepareStringFromContextText(ctx.getText());
@@ -68,7 +67,6 @@ class AssemblerGrammarHelper {
             }
         }
     }
-
     void setTargetRegister(AssemblerGrammarParser.Target_registerContext ctx) {
         String registerTextRepresentation = prepareStringFromContextText(ctx.getText());
         switch (registerTextRepresentation)
@@ -95,33 +93,11 @@ class AssemblerGrammarHelper {
             }
         }
     }
-
-    void addNumberToList(AssemblerGrammarParser.NumberContext ctx)
+    void addNumberOrSymbolToList(ParserRuleContext ctx)
     {
         String tempString = prepareStringFromContextText(ctx.getText());
         this.mathOperationElementsList.add(tempString);
     }
-    void addPlusOrMinusOperatorToList(AssemblerGrammarParser.Plus_or_minusContext ctx)
-    {
-        String tempString = prepareStringFromContextText(ctx.getText());
-        this.mathOperationElementsList.add(tempString);
-    }
-    void addMultiplicationOperatorToList(AssemblerGrammarParser.MultiplicationContext ctx)
-    {
-        String tempString = prepareStringFromContextText(ctx.getText());
-        this.mathOperationElementsList.add(tempString);
-    }
-    void addLeftBracketToList(AssemblerGrammarParser.Left_bracketContext ctx)
-    {
-        String tempString = prepareStringFromContextText(ctx.getText());
-        this.mathOperationElementsList.add(tempString);
-    }
-    void addRightBracketToList(AssemblerGrammarParser.Right_bracketContext ctx)
-    {
-        String tempString = prepareStringFromContextText(ctx.getText());
-        this.mathOperationElementsList.add(tempString);
-    }
-
     void handleMov()
     {
         this.command = Command.MOV;
@@ -138,7 +114,6 @@ class AssemblerGrammarHelper {
     {
         this.command = Command.XOR;
     }
-
     void prepareDataStringBasedOnInput()
     {
         this.dataStringBasedOnInput="";
@@ -156,7 +131,6 @@ class AssemblerGrammarHelper {
         }
         this.dataStringBasedOnInput = stringResult.toString();
     }
-
     void executeCommand()
     {
         String tempResult;
@@ -170,7 +144,7 @@ class AssemblerGrammarHelper {
                 }
                 else
                 {
-                    int tempInt = EvaluateString.evaluate(this.dataStringBasedOnInput);
+                    int tempInt = MathExpressionCalculator.calculateMathExpressionBasedOnString(this.dataStringBasedOnInput);
                     tempResult = Integer.toString(tempInt);
                     this.targetRegister.setValue(tempResult);
                 }
@@ -180,9 +154,9 @@ class AssemblerGrammarHelper {
             case XOR:
             {
 
-                if(this.dataStringBasedOnInput.equals("???"))
+                if(this.dataStringBasedOnInput.equals("???") || this.targetRegister.getValue().equals("???"))
                 {
-                    if(this.targetRegister.getValue().equals("???"))
+                    if(this.dataStringBasedOnInput.equals("???") && this.targetRegister.getValue().equals("???") )
                     {
                         this.targetRegister.setValue("0");
                     }
@@ -193,7 +167,7 @@ class AssemblerGrammarHelper {
                 }
                 else
                 {
-                    int tempInt = EvaluateString.evaluate(this.dataStringBasedOnInput);
+                    int tempInt = MathExpressionCalculator.calculateMathExpressionBasedOnString(this.dataStringBasedOnInput);
                     tempResult = Integer.toString(tempInt ^ Integer.parseInt(this.targetRegister.getValue()));
                     this.targetRegister.setValue(tempResult);
                 }
@@ -207,7 +181,7 @@ class AssemblerGrammarHelper {
                 }
                 else
                 {
-                    int tempInt = EvaluateString.evaluate(this.dataStringBasedOnInput);
+                    int tempInt = MathExpressionCalculator.calculateMathExpressionBasedOnString(this.dataStringBasedOnInput);
                     tempResult = Integer.toString(tempInt);
                     this.stack.push(tempResult);
                 }
