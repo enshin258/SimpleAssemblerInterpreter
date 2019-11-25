@@ -1,42 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57f40545-c36b-4c38-b2e5-6e70aa569df6" name="Default Changelist" comment="little fixes v3">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="57f40545-c36b-4c38-b2e5-6e70aa569df6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AssemblerInterpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AssemblerInterpreter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AssemblerGrammar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/AssemblerGrammar.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammar.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammar.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammarHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerGrammarParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EvaluateString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$FactorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$FactorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$InstructionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$InstructionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Int0x80_expressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Int0x80_expressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Left_bracketContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Left_bracketContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Math_operationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Math_operationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Mov_expressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Mov_expressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$MultiplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$MultiplicationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$NumberContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$NumberContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$OperandContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$OperandContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Plus_or_minusContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Plus_or_minusContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Push_expressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Push_expressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Right_bracketContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Right_bracketContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Source_registerContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Source_registerContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Target_registerContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Target_registerContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$TermContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$TermContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Xor_expressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Xor_expressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EvaluateString.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-assemblerInterpreter-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574532438702</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="little fixes v3">
+      <created>1574615637974</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574615637974</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,5 +123,16 @@
     <MESSAGE value="little fixes v2" />
     <MESSAGE value="little fixes v3" />
     <option name="LAST_COMMIT_MESSAGE" value="little fixes v3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/AssemblerGrammarHelper.java</url>
+          <line>177</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

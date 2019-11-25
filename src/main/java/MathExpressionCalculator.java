@@ -1,73 +1,70 @@
 import java.util.Stack;
 
 class MathExpressionCalculator {
-    static int calculateMathExpressionBasedOnString(String expression)
-    {
-        char[] tokens = expression.toCharArray();
+    public static int calculateMathExpressionBasedOnString(final String str) {
+        return new Object() {
+            int pos = -1, ch;
 
-        Stack<Integer> numbers = new Stack<>();
-
-        Stack<Character> mathSymbols = new Stack<>();
-
-        for (int i = 0; i < tokens.length; i++)
-        {
-            if (tokens[i] == ' ')
-                continue;
-
-            if (tokens[i] >= '0' && tokens[i] <= '9')
-            {
-                StringBuilder tempStringBuilder = new StringBuilder();
-                while (i < tokens.length && tokens[i] >= '0' && tokens[i] <= '9')
-                    tempStringBuilder.append(tokens[i++]);
-                numbers.push(Integer.parseInt(tempStringBuilder.toString()));
+            void nextChar() {
+                ch = (++pos < str.length()) ? str.charAt(pos) : -1;
             }
 
-            else if (tokens[i] == '(')
-                mathSymbols.push(tokens[i]);
-
-            else if (tokens[i] == ')')
-            {
-                while (mathSymbols.peek() != '(')
-                    numbers.push(applySymbol(mathSymbols.pop(), numbers.pop(), numbers.pop()));
-                mathSymbols.pop();
+            boolean eat(int charToEat) {
+                while (ch == ' ') nextChar();
+                if (ch == charToEat) {
+                    nextChar();
+                    return true;
+                }
+                return false;
             }
 
-            else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*')
-            {
-                while (!mathSymbols.empty() && hasPrecedence(tokens[i], mathSymbols.peek()))
-                    numbers.push(applySymbol(mathSymbols.pop(), numbers.pop(), numbers.pop()));
-
-                mathSymbols.push(tokens[i]);
+            int parse() {
+                nextChar();
+                int x = ((int) parseExpression());
+                if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char) ch);
+                return x;
             }
-        }
 
-        while (!mathSymbols.empty())
-            numbers.push(applySymbol(mathSymbols.pop(), numbers.pop(), numbers.pop()));
+            // Grammar:
+            // expression = term | expression `+` term | expression `-` term
+            // term = factor | term `*` factor | term `/` factor
+            // factor = `+` factor | `-` factor | `(` expression `)`
+            //        | number | functionName factor | factor `^` factor
 
-        int returnValue = numbers.pop();
-        numbers.clear();
-        mathSymbols.clear();
-        return returnValue;
-    }
+            int parseExpression() {
+                int x = (int) parseTerm();
+                for (; ; ) {
+                    if (eat('+')) x += parseTerm(); // addition
+                    else if (eat('-')) x -= parseTerm(); // subtraction
+                    else return x;
+                }
+            }
 
-    private static boolean hasPrecedence(char symbol1, char symbol2)
-    {
-        if (symbol2 == '(' || symbol2 == ')')
-            return false;
-        return (symbol1 != '*') || (symbol2 != '+' && symbol2 != '-');
-    }
+            int parseTerm() {
+                int x = (int) parseFactor();
+                for (; ; ) {
+                    if (eat('*')) x *= parseFactor(); // multiplication
+                    else return x;
+                }
+            }
 
-    private static int applySymbol(char symbol, int b, int a)
-    {
-        switch (symbol)
-        {
-            case '+':
-                return a + b;
-            case '-':
-                return a - b;
-            case '*':
-                return a * b;
-        }
-        return 0;
+            int parseFactor() {
+                if (eat('+')) return parseFactor(); // unary plus
+                if (eat('-')) return -parseFactor(); // unary minus
+
+                int x;
+                int startPos = this.pos;
+                if (eat('(')) { // parentheses
+                    x = (int) parseExpression();
+                    eat(')');
+                } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
+                    while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
+                    x = (int) Double.parseDouble(str.substring(startPos, this.pos));
+                } else {
+                    throw new RuntimeException("Unexpected: " + (char) ch);
+                }
+                return x;
+            }
+        }.parse();
     }
 }
