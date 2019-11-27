@@ -1,0 +1,7 @@
+mov 22,%eax
+mov (%eax-4*(1-2)),%eax
+mov (%eax-4* (1-2)),%eax
+mov (%eax -4*(1-2)), %eax
+mov ( %eax-4*(1-2)),%eax
+mov ( %eax-4*(1-2)),%eax   
+mov ( %eax-4*(1-2)),%eax  

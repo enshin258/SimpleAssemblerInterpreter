@@ -1,82 +1,82 @@
-public class MyVisitor extends AssemblerGrammarBaseVisitor<Object> {
-    private AssemblerGrammarHelper assemblerGrammarHelper;
+public class MyVisitor extends GrammarBaseVisitor<Object> {
+    private AssemblerHelper assemblerHelper;
 
-    MyVisitor(AssemblerGrammarHelper assemblerGrammarHelper) {
-        this.assemblerGrammarHelper = assemblerGrammarHelper;
+    MyVisitor(AssemblerHelper assemblerHelper) {
+        this.assemblerHelper = assemblerHelper;
     }
 
-    @Override public Object visitInstruction(AssemblerGrammarParser.InstructionContext ctx) {
+    @Override public Object visitInstruction(GrammarParser.InstructionContext ctx) {
         return visitChildren(ctx);
     }
 
-    @Override public Object visitMov_expression(AssemblerGrammarParser.Mov_expressionContext ctx) {
-        assemblerGrammarHelper.handleMov();
+    @Override public Object visitMov_expression(GrammarParser.Mov_expressionContext ctx) {
+        assemblerHelper.handleMov();
         return visitChildren(ctx);
     }
 
-    @Override public Object visitPush_expression(AssemblerGrammarParser.Push_expressionContext ctx) {
-        assemblerGrammarHelper.handlePush();
+    @Override public Object visitPush_expression(GrammarParser.Push_expressionContext ctx) {
+        assemblerHelper.handlePush();
         return visitChildren(ctx);
     }
 
-    @Override public Object visitInt0x80_expression(AssemblerGrammarParser.Int0x80_expressionContext ctx) {
-        assemblerGrammarHelper.handleInt();
+    @Override public Object visitInt0x80_expression(GrammarParser.Int0x80_expressionContext ctx) {
+        assemblerHelper.handleInt();
         return visitChildren(ctx);
     }
 
-    @Override public Object visitXor_expression(AssemblerGrammarParser.Xor_expressionContext ctx) {
-        assemblerGrammarHelper.handleXor();
+    @Override public Object visitXor_expression(GrammarParser.Xor_expressionContext ctx) {
+        assemblerHelper.handleXor();
         return visitChildren(ctx);
     }
 
-    @Override public Object visitMath_operation(AssemblerGrammarParser.Math_operationContext ctx) {
+    @Override public Object visitMath_operation(GrammarParser.Math_operationContext ctx) {
         return visitChildren(ctx);
     }
 
-    @Override public Object visitTerm(AssemblerGrammarParser.TermContext ctx) {
+    @Override public Object visitTerm(GrammarParser.TermContext ctx) {
         return visitChildren(ctx);
     }
 
-    @Override public Object visitFactor(AssemblerGrammarParser.FactorContext ctx) {
+    @Override public Object visitFactor(GrammarParser.FactorContext ctx) {
         return visitChildren(ctx);
     }
 
-    @Override public Object visitOperand(AssemblerGrammarParser.OperandContext ctx) {
+    @Override public Object visitOperand(GrammarParser.OperandContext ctx) {
         return visitChildren(ctx);
     }
 
-    @Override public Object visitSource_register(AssemblerGrammarParser.Source_registerContext ctx) {
-        assemblerGrammarHelper.addRegisterValueToList(ctx);
+    @Override public Object visitSource_register(GrammarParser.Source_registerContext ctx) {
+        assemblerHelper.addRegisterValueToList(ctx);
         return visitChildren(ctx);
     }
 
-    @Override public Object visitTarget_register(AssemblerGrammarParser.Target_registerContext ctx) {
-        assemblerGrammarHelper.setTargetRegister(ctx);
+    @Override public Object visitTarget_register(GrammarParser.Target_registerContext ctx) {
+        assemblerHelper.setTargetRegister(ctx);
         return visitChildren(ctx);
     }
 
-    @Override public Object visitNumber(AssemblerGrammarParser.NumberContext ctx) {
-        assemblerGrammarHelper.addNumberOrSymbolToList(ctx);
+    @Override public Object visitNumber(GrammarParser.NumberContext ctx) {
+        assemblerHelper.addNumberOrSymbolToList(ctx);
         return visitChildren(ctx);
     }
 
-    @Override public Object visitPlus_or_minus(AssemblerGrammarParser.Plus_or_minusContext ctx) {
-        assemblerGrammarHelper.addNumberOrSymbolToList(ctx);
+    @Override public Object visitPlus_or_minus(GrammarParser.Plus_or_minusContext ctx) {
+        assemblerHelper.addNumberOrSymbolToList(ctx);
         return visitChildren(ctx);
     }
 
-    @Override public Object visitMultiplication(AssemblerGrammarParser.MultiplicationContext ctx) {
-        assemblerGrammarHelper.addNumberOrSymbolToList(ctx);
+    @Override public Object visitMultiplication(GrammarParser.MultiplicationContext ctx) {
+        assemblerHelper.addNumberOrSymbolToList(ctx);
         return visitChildren(ctx);
     }
 
-    @Override public Object visitLeft_bracket(AssemblerGrammarParser.Left_bracketContext ctx) {
-        assemblerGrammarHelper.addNumberOrSymbolToList(ctx);
+    @Override public Object visitLeft_bracket(GrammarParser.Left_bracketContext ctx) {
+        assemblerHelper.addNumberOrSymbolToList(ctx);
         return visitChildren(ctx);
     }
 
-    @Override public Object visitRight_bracket(AssemblerGrammarParser.Right_bracketContext ctx) {
-        assemblerGrammarHelper.addNumberOrSymbolToList(ctx);
+    @Override public Object visitRight_bracket(GrammarParser.Right_bracketContext ctx) {
+        assemblerHelper.addNumberOrSymbolToList(ctx);
         return visitChildren(ctx);
     }
 }

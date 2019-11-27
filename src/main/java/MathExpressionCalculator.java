@@ -1,71 +1,107 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
-class MathExpressionCalculator {
-     static int calculateMathExpressionBasedOnString(final String str) {
-        return new Object() {
+class MathExpressionCalculator
+{
+     static Stack<Integer> digitsStack = new Stack<>();
+     static Stack<Character> mathSymbolsStack = new Stack<>();
+     static char[] tokens ;
 
-            // Grammar used to help calculating math:
-            // expression = term | expression `+` term | expression `-` term
-            // term = factor | term `*` factor | term `/` factor
-            // factor = `+` factor | `-` factor | `(` expression `)`
-            //        | number | functionName factor | factor `^` factor
 
-            int pos = -1, ch;
+     public static int calculateMathExpressionBasedOnString(String expression)
+     {
+          tokens = expression.toCharArray();
+          for (int i = 0; i < tokens.length; i++)
+          {
+               if (tokens[i] == ' ')
+                    continue;
 
-            void nextChar() {
-                ch = (++pos < str.length()) ? str.charAt(pos) : -1;
-            }
+               if (tokens[i] >= '0' && tokens[i] <= '9')
+               {
+                    StringBuffer stringBuffer = new StringBuffer();
+                    while (i < tokens.length && tokens[i] >= '0' && tokens[i] <= '9')
+                    {
+                         stringBuffer.append(tokens[i++]);
+                    }
+                    digitsStack.push(Integer.parseInt(stringBuffer.toString()));
+               }
 
-            boolean eat(int charToEat) {
-                while (ch == ' ') nextChar();
-                if (ch == charToEat) {
-                    nextChar();
-                    return true;
-                }
-                return false;
-            }
+               else if (tokens[i] == '(')
+               {
+                    mathSymbolsStack.push(tokens[i]);
+               }
 
-            int parse() {
-                nextChar();
-                int x = ((int) parseExpression());
-                if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char) ch);
-                return x;
-            }
+               else if (tokens[i] == ')')
+               {
+                    while (mathSymbolsStack.peek() != '(')
+                    {
+                         digitsStack.push(calculate(mathSymbolsStack.pop(), digitsStack.pop(), digitsStack.pop()));
+                    }
+                    mathSymbolsStack.pop();
+               }
 
-            int parseExpression() {
-                int x = (int) parseTerm();
-                for (; ; ) {
-                    if (eat('+')) x += parseTerm();
-                    else if (eat('-')) x -= parseTerm();
-                    else return x;
-                }
-            }
+               else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*')
+               {
+                    //negative number
+                    if(tokens[i] == '-' && mathSymbolsStack.isEmpty() && digitsStack.isEmpty())
+                    {
+                          return negativeNumber();
+                    }
+                    while (!mathSymbolsStack.empty() && hasPrecedence(tokens[i], mathSymbolsStack.peek()))
+                    {
+                         digitsStack.push(calculate(mathSymbolsStack.pop(), digitsStack.pop(), digitsStack.pop()));
+                    }
 
-            int parseTerm() {
-                int x = (int) parseFactor();
-                for (; ; ) {
-                    if (eat('*')) x *= parseFactor();
-                    else return x;
-                }
-            }
+                    mathSymbolsStack.push(tokens[i]);
+               }
+          }
+          while (!mathSymbolsStack.empty())
+               digitsStack.push(calculate(mathSymbolsStack.pop(), digitsStack.pop(), digitsStack.pop()));
 
-            int parseFactor() {
-                if (eat('+')) return parseFactor();
-                if (eat('-')) return -parseFactor();
+          int result = digitsStack.pop();
+          digitsStack.clear();
+          mathSymbolsStack.clear();
+          return result;
+     }
+     private static int negativeNumber()
+     {
+          StringBuilder tempStringBuffer = new StringBuilder();
+          for(int j = 1;j < tokens.length; j++)
+          {
+               if (tokens[j] >= '0' && tokens[j] <= '9')
+               {
+                    while (j < tokens.length && tokens[j] >= '0' && tokens[j] <= '9')
+                    {
+                         tempStringBuffer.append(tokens[j++]);
+                    }
+               }
+          }
+          return (-Integer.parseInt(tempStringBuffer.toString()));
 
-                int x;
-                int startPos = this.pos;
-                if (eat('(')) {
-                    x = (int) parseExpression();
-                    eat(')');
-                } else if ((ch >= '0' && ch <= '9') || ch == '.') {
-                    while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
-                    x = (int) Double.parseDouble(str.substring(startPos, this.pos));
-                } else {
-                    throw new RuntimeException("Unexpected: " + (char) ch);
-                }
-                return x;
-            }
-        }.parse();
-    }
+     }
+
+     private static boolean hasPrecedence(char op1, char op2)
+     {
+          if (op2 == '(' || op2 == ')')
+               return false;
+          if ((op1 == '*') && (op2 == '+' || op2 == '-'))
+               return false;
+          else
+               return true;
+     }
+     
+     private static int calculate(char op, int b, int a)
+     {
+          switch (op)
+          {
+               case '+':
+                    return a + b;
+               case '-':
+                    return a - b;
+               case '*':
+                    return a * b;
+          }
+          return 0;
+     }
 }

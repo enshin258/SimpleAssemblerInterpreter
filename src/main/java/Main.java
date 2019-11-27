@@ -8,18 +8,18 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         String command;
-        AssemblerGrammarHelper assemblerGrammarHelper = new AssemblerGrammarHelper();
-        MyVisitor visitor = new MyVisitor(assemblerGrammarHelper);
+        AssemblerHelper assemblerHelper = new AssemblerHelper();
+        MyVisitor visitor = new MyVisitor(assemblerHelper);
 
         while(scanner.hasNext())
         {
             command = scanner.nextLine();
 
             CharStream charStream = CharStreams.fromString(command);
-            AssemblerGrammarLexer lexer = new AssemblerGrammarLexer(charStream);
+            GrammarLexer lexer = new GrammarLexer(charStream);
             lexer.removeErrorListener(ConsoleErrorListener.INSTANCE);
             CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-            AssemblerGrammarParser parser = new AssemblerGrammarParser(tokenStream);
+            GrammarParser parser = new GrammarParser(tokenStream);
             parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
             ParseTree parseTree = parser.instruction();
             visitor.visit(parseTree);
@@ -28,21 +28,21 @@ public class Main {
 
             if(parser.getNumberOfSyntaxErrors() > 0){
                 System.out.println("Error");
-                assemblerGrammarHelper.cleanUp();
-                //assemblerGrammarHelper.getActualStatus();
+                assemblerHelper.cleanUp();
+                //assemblerHelper.getActualStatus();
                 continue;
             }
 
             try {
-                assemblerGrammarHelper.prepareDataStringBasedOnInput();
-                assemblerGrammarHelper.executeCommand();
-                //assemblerGrammarHelper.getActualStatus();
-                assemblerGrammarHelper.cleanUp();
+                assemblerHelper.prepareDataStringBasedOnInput();
+                assemblerHelper.executeCommand();
+                //assemblerHelper.getActualStatus();
+                assemblerHelper.cleanUp();
             }
             catch (UnsupportedOperationException | RecognitionException e){
                 System.out.println("Error");
-                assemblerGrammarHelper.cleanUp();
-                //assemblerGrammarHelper.getActualStatus();
+                assemblerHelper.cleanUp();
+                //assemblerHelper.getActualStatus();
             }
         }
     }

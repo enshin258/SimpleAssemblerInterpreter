@@ -4,11 +4,59 @@
     <list default="true" id="57f40545-c36b-4c38-b2e5-6e70aa569df6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammar.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammar.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/AssemblerGrammarVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AssemblerGrammar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammar.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammar.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AssemblerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AssemblerGrammarVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MyVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarBaseVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarLexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$FactorContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$InstructionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Int0x80_expressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Left_bracketContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Math_operationContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Mov_expressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$MultiplicationContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$NumberContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$OperandContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Plus_or_minusContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Push_expressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Right_bracketContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Source_registerContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Target_registerContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$TermContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser$Xor_expressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyVisitor.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +88,12 @@
     <property name="$PROJECT_DIR$/src/AssemblerGrammar.g4::/gen-listener" value="true" />
     <property name="$PROJECT_DIR$/src/AssemblerGrammar.g4::/gen-visitor" value="true" />
     <property name="$PROJECT_DIR$/src/AssemblerGrammar.g4::/output-dir" value="C:\Users\Dom\Desktop\WAT\JFK\AssemblerInterpreter\src\main\java" />
+    <property name="$PROJECT_DIR$/src/Grammar.g4::/auto-gen" value="true" />
+    <property name="$PROJECT_DIR$/src/Grammar.g4::/gen-listener" value="true" />
+    <property name="$PROJECT_DIR$/src/Grammar.g4::/gen-visitor" value="true" />
+    <property name="$PROJECT_DIR$/src/Grammar.g4::/output-dir" value="C:\Users\Dom\Desktop\WAT\JFK\AssemblerInterpreter\src\main\java" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/input.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -105,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574681350982</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="little fixes v5">
+      <created>1574851493703</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574851493703</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +185,18 @@
     <MESSAGE value="little fixes v2" />
     <MESSAGE value="little fixes v3" />
     <MESSAGE value="little fixes v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="little fixes v4" />
+    <MESSAGE value="little fixes v5" />
+    <option name="LAST_COMMIT_MESSAGE" value="little fixes v5" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/AssemblerHelper.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
