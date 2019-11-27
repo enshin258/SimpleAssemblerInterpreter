@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f40545-c36b-4c38-b2e5-6e70aa569df6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AssemblerInterpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AssemblerInterpreter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MathExpressionCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assemblerInterpreter-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AssemblerGrammarHelper$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EvaluateString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MyVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-assemblerInterpreter-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-assemblerInterpreter-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574615637974</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="little fixes v4">
+      <created>1574681350982</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574681350982</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,17 +125,7 @@
     <MESSAGE value="little fixes" />
     <MESSAGE value="little fixes v2" />
     <MESSAGE value="little fixes v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="little fixes v3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/AssemblerGrammarHelper.java</url>
-          <line>177</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="little fixes v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="little fixes v4" />
   </component>
 </project>

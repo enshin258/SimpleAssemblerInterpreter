@@ -10,5 +10,8 @@
         <module name="assemblerInterpreter" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AssemblerInterpreter" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

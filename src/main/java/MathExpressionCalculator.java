@@ -1,8 +1,15 @@
 import java.util.Stack;
 
 class MathExpressionCalculator {
-    public static int calculateMathExpressionBasedOnString(final String str) {
+     static int calculateMathExpressionBasedOnString(final String str) {
         return new Object() {
+
+            // Grammar used to help calculating math:
+            // expression = term | expression `+` term | expression `-` term
+            // term = factor | term `*` factor | term `/` factor
+            // factor = `+` factor | `-` factor | `(` expression `)`
+            //        | number | functionName factor | factor `^` factor
+
             int pos = -1, ch;
 
             void nextChar() {
@@ -25,17 +32,11 @@ class MathExpressionCalculator {
                 return x;
             }
 
-            // Grammar:
-            // expression = term | expression `+` term | expression `-` term
-            // term = factor | term `*` factor | term `/` factor
-            // factor = `+` factor | `-` factor | `(` expression `)`
-            //        | number | functionName factor | factor `^` factor
-
             int parseExpression() {
                 int x = (int) parseTerm();
                 for (; ; ) {
-                    if (eat('+')) x += parseTerm(); // addition
-                    else if (eat('-')) x -= parseTerm(); // subtraction
+                    if (eat('+')) x += parseTerm();
+                    else if (eat('-')) x -= parseTerm();
                     else return x;
                 }
             }
@@ -43,21 +44,21 @@ class MathExpressionCalculator {
             int parseTerm() {
                 int x = (int) parseFactor();
                 for (; ; ) {
-                    if (eat('*')) x *= parseFactor(); // multiplication
+                    if (eat('*')) x *= parseFactor();
                     else return x;
                 }
             }
 
             int parseFactor() {
-                if (eat('+')) return parseFactor(); // unary plus
-                if (eat('-')) return -parseFactor(); // unary minus
+                if (eat('+')) return parseFactor();
+                if (eat('-')) return -parseFactor();
 
                 int x;
                 int startPos = this.pos;
-                if (eat('(')) { // parentheses
+                if (eat('(')) {
                     x = (int) parseExpression();
                     eat(')');
-                } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
+                } else if ((ch >= '0' && ch <= '9') || ch == '.') {
                     while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
                     x = (int) Double.parseDouble(str.substring(startPos, this.pos));
                 } else {
