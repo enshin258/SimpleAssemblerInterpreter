@@ -1,6 +1,6 @@
 grammar Grammar;
 
-instruction: ('mov' ' ' mov_expression | 'push' ' ' push_expression | int0x80_expression | 'xor' ' ' xor_expression) (' ' | '\t')* ('\n'|EOF);
+instruction: ('mov' ' ' mov_expression | 'push' ' ' push_expression | int0x80_expression | 'xor' ' ' xor_expression)? (' ' | '\t')* ('\n'|EOF);
 
 mov_expression: math_operation ' '? ',' ' '? target_register;
 push_expression: math_operation;

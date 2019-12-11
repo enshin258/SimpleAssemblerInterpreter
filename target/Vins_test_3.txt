@@ -1,4 +1,0 @@
-xor %eax,%eax
-xor %eax, %eax
-xor %eax ,%eax
-xor %eax ,%eax   

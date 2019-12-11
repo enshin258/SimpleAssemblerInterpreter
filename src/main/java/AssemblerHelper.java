@@ -47,22 +47,81 @@ class AssemblerHelper {
         {
             case "eax":
             {
-                this.mathOperationElementsList.add(eax.getValue());
+                if(!eax.getValue().equals("???"))
+                {
+                    if(Integer.parseInt(eax.getValue())<0)
+                    {
+                        this.mathOperationElementsList.add("( 0 " + eax.getValue() + " )");
+
+                    }
+                    else
+                    {
+                        this.mathOperationElementsList.add(eax.getValue());
+                    }
+                }
+                else
+                {
+                    this.mathOperationElementsList.add(eax.getValue());
+                }
                 break;
             }
             case "ebx":
             {
-                this.mathOperationElementsList.add(ebx.getValue());
+                if(!ebx.getValue().equals("???"))
+                {
+                    if(Integer.parseInt(ebx.getValue())<0)
+                    {
+                        this.mathOperationElementsList.add("( 0 " + ebx.getValue() + " )");
+
+                    }
+                    else
+                    {
+                        this.mathOperationElementsList.add(ebx.getValue());
+                    }
+                }
+                else
+                {
+                    this.mathOperationElementsList.add(ebx.getValue());
+                }
                 break;
             }
             case "ecx":
             {
-                this.mathOperationElementsList.add(ecx.getValue());
+                if(!ecx.getValue().equals("???"))
+                {
+                    if(Integer.parseInt(ecx.getValue())<0)
+                    {
+                        this.mathOperationElementsList.add("( 0 " + ecx.getValue() + " )");
+                    }
+                    else
+                    {
+                        this.mathOperationElementsList.add(ecx.getValue());
+                    }
+                }
+                else
+                {
+                    this.mathOperationElementsList.add(ecx.getValue());
+                }
                 break;
             }
             case "edx":
             {
-                this.mathOperationElementsList.add(edx.getValue());
+                if(!edx.getValue().equals("???"))
+                {
+                    if(Integer.parseInt(edx.getValue())<0)
+                    {
+                        this.mathOperationElementsList.add("( 0 " + edx.getValue() + " )");
+
+                    }
+                    else
+                    {
+                        this.mathOperationElementsList.add(edx.getValue());
+                    }
+                }
+                else
+                {
+                    this.mathOperationElementsList.add(edx.getValue());
+                }
                 break;
             }
         }

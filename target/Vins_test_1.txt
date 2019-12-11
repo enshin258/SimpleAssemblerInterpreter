@@ -1,9 +1,0 @@
-mov (25-2)*3,%eax
-mov ( 25-2)*3,%eax
-mov (25 -2)*3,%eax
-mov (25- 2)*3,%eax
-mov (25-2 )*3,%eax
-mov (25-2) *3,%eax
-mov (25-2)* 3,%eax
-mov (25-2)*3 ,%eax
-mov (25-2)*3, %eax

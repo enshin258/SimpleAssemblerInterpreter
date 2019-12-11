@@ -4,9 +4,10 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         String command;
         AssemblerHelper assemblerHelper = new AssemblerHelper();
         MyVisitor visitor = new MyVisitor(assemblerHelper);
@@ -14,6 +15,12 @@ public class Main {
         while(scanner.hasNext())
         {
             command = scanner.nextLine();
+            command=command.replaceAll("\t","");
+            command=command.trim();
+            if(command.equals(""))
+            {
+                continue;
+            }
 
             CharStream charStream = CharStreams.fromString(command);
             GrammarLexer lexer = new GrammarLexer(charStream);
